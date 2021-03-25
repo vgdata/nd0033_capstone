@@ -1,0 +1,33 @@
+2021/03/16 17:49:35 Attempt 1 of http call to http://10.0.0.6:16384/sendlogstoartifacts/info
+2021/03/16 17:49:35 Attempt 1 of http call to http://10.0.0.6:16384/sendlogstoartifacts/status
+[2021-03-16T17:49:36.702069] Entering context manager injector.
+[context_manager_injector.py] Command line Options: Namespace(inject=['ProjectPythonPath:context_managers.ProjectPythonPath', 'RunHistory:context_managers.RunHistory', 'TrackUserError:context_managers.TrackUserError'], invocation=['train.py', '--C', '0.2948807189970948', '--max_iter', '150'])
+Script type = None
+Starting the daemon thread to refresh tokens in background for process with pid = 118
+[2021-03-16T17:49:38.458566] Entering Run History Context Manager.
+[2021-03-16T17:49:39.465761] Current directory: /mnt/batch/tasks/shared/LS_root/jobs/quick-starts-ws-140708/azureml/hd_49ba7bb7-c341-45d5-96ec-35fc3dbbdb76_29/mounts/workspaceblobstore/azureml/HD_49ba7bb7-c341-45d5-96ec-35fc3dbbdb76_29
+[2021-03-16T17:49:39.466116] Preparing to call script [train.py] with arguments:['--C', '0.2948807189970948', '--max_iter', '150']
+[2021-03-16T17:49:39.466174] After variable expansion, calling script [train.py] with arguments:['--C', '0.2948807189970948', '--max_iter', '150']
+
+2021/03/16 17:49:40 Not exporting to RunHistory as the exporter is either stopped or there is no data.
+Stopped: false
+OriginalData: 1
+FilteredData: 0.
+/opt/miniconda/lib/python3.6/site-packages/azureml/dataprep/api/dataflow.py:722: UserWarning: Your pandas and pyarrow versions are incompatible. Please install pyarrow>=0.12.0 for improved performance of to_pandas_dataframe. You can ensure the correct version is installed by running: pip install pyarrow>=0.12.0 --upgrade
+  warnings.warn('Your pandas and pyarrow versions are incompatible. '
+/opt/miniconda/lib/python3.6/site-packages/sklearn/linear_model/logistic.py:433: FutureWarning: Default solver will be changed to 'lbfgs' in 0.22. Specify a solver to silence this warning.
+  FutureWarning)
+Starting the daemon thread to refresh tokens in background for process with pid = 118
+
+
+[2021-03-16T17:49:57.050006] The experiment completed successfully. Finalizing run...
+Cleaning up all outstanding Run operations, waiting 900.0 seconds
+2 items cleaning up...
+Cleanup took 5.488226890563965 seconds
+[2021-03-16T17:50:03.628284] Finished context manager injector.
+2021/03/16 17:50:04 Attempt 1 of http call to http://10.0.0.6:16384/sendlogstoartifacts/status
+2021/03/16 17:50:04 Not exporting to RunHistory as the exporter is either stopped or there is no data.
+Stopped: false
+OriginalData: 2
+FilteredData: 0.
+2021/03/16 17:50:04 Process Exiting with Code:  0
