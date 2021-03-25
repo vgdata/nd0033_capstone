@@ -1,0 +1,29 @@
+March 24 evening
+
+heart-disease-kaggle
+
+Prediction: Death Event: From Heart Failure Dataset
+
+
+RunDetails(remote_run).show
+Stroke Prediction: from heart disease dataset
+
+..........
+automl
+votingensembleID
+AutoML_4d9955d1-6df0-4f9c-adef-883d4a0758ec_36
+
+...........
+automl
+Best Run Id:  AutoML_4d9955d1-6df0-4f9c-adef-883d4a0758ec_36
+
+ Accuracy: 0.8674165457184326
+
+..................
+service logs
+/azureml-envs/azureml_2b14f450572e78de640d54eaabed5e4d/lib/libcrypto.so.1.0.0
+
+.................
+hyperdrive 
+best run
+HD_f6459412-c144-4549-a690-efaa350e23a5_4	

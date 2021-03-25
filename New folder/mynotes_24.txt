@@ -1,0 +1,83 @@
+endpoint.py
+
+key = '9qcgCTJk82rgEpHadVyOjwiGN9FsYmGY'
+
+and at the end:
+
+
+#If authentication is enabled, set the authorization header
+headers['Authorization'] = f'Bearer {key}'
+
+#Make the request and display the response
+resp = requests.post(scoring_uri, input_data, headers=headers)
+print(resp.json())
+
+
+.........................................................................
+
+automl
+
+
+import os
+import pandas as pd
+import numpy as np
+import json
+import requests
+import joblib
+from sklearn.metrics import confusion_matrix
+import itertools
+
+from azureml.core import Dataset, Workspace, Experiment
+from azureml.core.compute import ComputeTarget, AmlCompute
+from azureml.core.compute_target import ComputeTargetException
+from azureml.widgets import RunDetails
+from azureml.train.automl import AutoMLConfig
+
+from azureml.core.model import InferenceConfig
+from azureml.core.webservice import AciWebservice, Webservice
+from azureml.core.model import Model
+from azureml.core.environment import Environment
+
+................................
+
+automl .ipny
+after > remote_run
+
+RunDetails(remote_run).show
+
+........................................................................
+automl.ipny
+just above model deployment:
+
+from azureml.automl.core.shared import constants 
+env = best_run.get_environment()
+
+script_file = 'score.py'
+
+best_run.download_file('outputs/scoring_file_v_1_0_0.py', script_file)
+best_run.download_file(constants.CONDA_ENV_FILE_PATH, 'env.yml')
+
+.......................................................................................
+
+
+
+inference_config = InferenceConfig(entry_script = script_file, environment = env)
+
+aci_config = AciWebservice.deploy_configuration(cpu_cores = 1, 
+                                                memory_gb = 1, 
+                                                enable_app_insights = True,
+                                                auth_enabled = True,
+                                               description = 'Predict whether person had stroke or not')
+                                            
+.........................................................................................
+aci_service_name = 'stroke-prediction2'
+
+model deployment> 
+
+print("Keys: " + service.get_keys()[0])
+print("Swagger URI: " + service.swagger_uri)
+
+model deployment > aci
+
+aci_service_name = 'stroke-prediction2'
+print(aci_service_name)
